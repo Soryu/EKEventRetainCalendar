@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yS-xo-fu5">
+                                <rect key="frame" x="110" y="172" width="100" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="eQn-Xg-n9d"/>
+                                    <constraint firstAttribute="width" constant="100" id="hsU-B8-Ivy"/>
+                                </constraints>
+                                <state key="normal" title="GO!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oR8-W0-Oex"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access calendar property" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2La-6q-WIM">
+                                <rect key="frame" x="16" y="126" width="196" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnM-8h-66O">
+                                <rect key="frame" x="16" y="236" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hgZ-Ma-xdy">
+                                <rect key="frame" x="255" y="121" width="51" height="31"/>
+                            </switch>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="$result" translatesAutoresizingMaskIntoConstraints="NO" id="DGT-Rg-sVU">
+                                <rect key="frame" x="78" y="236" width="226" height="100"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ypm-CP-7Z2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kse-PS-8ad">
+                                <rect key="frame" x="16" y="40" width="288" height="66"/>
+                                <string key="text">Retrieving and using an EKEvent instance without holding on to the EKEventStore will make the event forget its calendar propery!
+Press the “Go” button while leaving the toggle switch off, then turn the switch and press “Go” again.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2yS-xo-fu5" firstAttribute="top" secondItem="hgZ-Ma-xdy" secondAttribute="bottom" constant="20" id="3kD-zM-f61"/>
+                            <constraint firstItem="DGT-Rg-sVU" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="5dR-Ys-cTX"/>
+                            <constraint firstItem="OnM-8h-66O" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="A1j-DJ-lex"/>
+                            <constraint firstItem="DGT-Rg-sVU" firstAttribute="top" secondItem="OnM-8h-66O" secondAttribute="top" id="Et9-QC-G9P"/>
+                            <constraint firstAttribute="centerX" secondItem="2yS-xo-fu5" secondAttribute="centerX" id="Fze-zY-Vje"/>
+                            <constraint firstItem="Kse-PS-8ad" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="IHh-TT-LfM"/>
+                            <constraint firstItem="2La-6q-WIM" firstAttribute="top" secondItem="Kse-PS-8ad" secondAttribute="bottom" constant="20" id="Ku0-N2-g4a"/>
+                            <constraint firstItem="OnM-8h-66O" firstAttribute="top" secondItem="2yS-xo-fu5" secondAttribute="bottom" constant="20" id="MSm-fA-aQs"/>
+                            <constraint firstItem="Kse-PS-8ad" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="Oao-wi-YMh"/>
+                            <constraint firstItem="Kse-PS-8ad" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ccU-cz-Fkb"/>
+                            <constraint firstItem="2La-6q-WIM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="fvb-vI-aRD"/>
+                            <constraint firstItem="hgZ-Ma-xdy" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="tps-Hw-4WQ"/>
+                            <constraint firstItem="DGT-Rg-sVU" firstAttribute="leading" secondItem="OnM-8h-66O" secondAttribute="trailing" constant="8" id="yW9-co-VBg"/>
+                            <constraint firstItem="hgZ-Ma-xdy" firstAttribute="centerY" secondItem="2La-6q-WIM" secondAttribute="centerY" id="zYc-lx-2eW"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="goButton" destination="2yS-xo-fu5" id="9iC-vR-nIO"/>
+                        <outlet property="mySwitch" destination="hgZ-Ma-xdy" id="eSD-F3-BEy"/>
+                        <outlet property="resultTextView" destination="DGT-Rg-sVU" id="3hN-PS-64r"/>
+                        <segue destination="4Og-Fc-dk3" kind="presentation" identifier="askForCalendarAccess" id="gEY-nw-qpU"/>
+                        <segue destination="4qy-HW-bq7" kind="presentation" identifier="showAccessDenied" id="ckr-4R-yui"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-97" y="439"/>
+        </scene>
+        <!--Access View Controller-->
+        <scene sceneID="PO3-9f-QY8">
+            <objects>
+                <viewController id="4Og-Fc-dk3" customClass="AccessViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6YJ-oZ-61B"/>
+                        <viewControllerLayoutGuide type="bottom" id="HC9-Hi-SpI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="meD-qt-AfF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar access needed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gY2-5K-VvA">
+                                <rect key="frame" x="68" y="40" width="184" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please grant access to your calendars." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De4-bo-6rz">
+                                <rect key="frame" x="16" y="80" width="288" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsa-9c-vQ7">
+                                <rect key="frame" x="115" y="120" width="91" height="30"/>
+                                <state key="normal" title="Grant access">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="grantAccessButtonPressed:" destination="4Og-Fc-dk3" eventType="touchUpInside" id="XF2-OL-1Al"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="gY2-5K-VvA" secondAttribute="centerX" id="0DT-KQ-aqL"/>
+                            <constraint firstItem="De4-bo-6rz" firstAttribute="trailing" secondItem="meD-qt-AfF" secondAttribute="trailingMargin" id="8Qc-Ur-2Mv"/>
+                            <constraint firstItem="Gsa-9c-vQ7" firstAttribute="top" secondItem="De4-bo-6rz" secondAttribute="bottom" constant="20" id="9Zq-9D-RvR"/>
+                            <constraint firstItem="De4-bo-6rz" firstAttribute="leading" secondItem="meD-qt-AfF" secondAttribute="leadingMargin" id="Mcj-h9-qef"/>
+                            <constraint firstAttribute="centerX" secondItem="Gsa-9c-vQ7" secondAttribute="centerX" id="a4N-SI-MPs"/>
+                            <constraint firstItem="De4-bo-6rz" firstAttribute="top" secondItem="gY2-5K-VvA" secondAttribute="bottom" constant="20" id="fjD-K4-g1P"/>
+                            <constraint firstItem="gY2-5K-VvA" firstAttribute="top" secondItem="6YJ-oZ-61B" secondAttribute="bottom" constant="20" id="k1U-i6-JIi"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="4qy-HW-bq7" kind="showDetail" identifier="showAccessDenied" id="jh6-Xa-X6p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cv1-VC-LXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-97" y="1079"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5oQ-hO-Pzc">
+            <objects>
+                <viewController id="4qy-HW-bq7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="blF-W0-2dv"/>
+                        <viewControllerLayoutGuide type="bottom" id="mUK-0B-gug"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2lT-Ez-VsM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar access denied" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF2-3D-nzE">
+                                <rect key="frame" x="71" y="40" width="179" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please grant access to your calendars in the Settings app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zJ-EK-O2U">
+                                <rect key="frame" x="16" y="80" width="288" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2zJ-EK-O2U" firstAttribute="top" secondItem="yF2-3D-nzE" secondAttribute="bottom" constant="20" id="6CS-7X-hhZ"/>
+                            <constraint firstAttribute="centerX" secondItem="yF2-3D-nzE" secondAttribute="centerX" id="CxT-Tn-sqo"/>
+                            <constraint firstItem="2zJ-EK-O2U" firstAttribute="leading" secondItem="2lT-Ez-VsM" secondAttribute="leadingMargin" id="EQx-Ti-dZk"/>
+                            <constraint firstItem="2zJ-EK-O2U" firstAttribute="trailing" secondItem="2lT-Ez-VsM" secondAttribute="trailingMargin" id="PNS-08-RFC"/>
+                            <constraint firstItem="yF2-3D-nzE" firstAttribute="top" secondItem="blF-W0-2dv" secondAttribute="bottom" constant="20" id="vCA-GC-efs"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rk2-5s-IWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341" y="1079"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jh6-Xa-X6p"/>
+    </inferredMetricsTieBreakers>
+</document>
